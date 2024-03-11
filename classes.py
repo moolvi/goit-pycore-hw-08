@@ -317,12 +317,12 @@ class Record:
     def __str__(self):
         return f"Record a contact: {self.name}, \
 phones: {'; '.join(p.value for p in self.phones)} \
-birthday: {self.birthday if self.birthday else 'format=DD.MM.YYYY'}\n"
+birthday: {self.birthday.value if self.birthday else 'format=DD.MM.YYYY'}\n"
     
     def __repr__(self):
         return f"Record(value={self.name}, \
 phones={'; '.join(p.value for p in self.phones)}, \
-birthday={self.birthday if self.birthday else 'format(%d.%m.%Y)'}\n"
+birthday={self.birthday.value if self.birthday else 'format(%d.%m.%Y)'}\n"
 
 
 class AddressBook(UserDict):

@@ -151,12 +151,12 @@ def load_data(filename="addressbook.pkl"):
         with open(filename, "rb") as f:
             return pickle.load(f)
     except FileNotFoundError:
-        return AddressBook()  # Повернення нової адресної книги, якщо файл не знайдено
+        return AddressBook()
 
 
 def main():
     book = load_data()
-    #book = AddressBook()
+
     #print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ")
@@ -181,7 +181,7 @@ def main():
             print(show_phone(args[0], book))
 
         elif command == "all":
-            print(show_all(book), '\n')
+            print(show_all(book))
 
         elif command == "add-birthday":
             add_birthday(args, book)
